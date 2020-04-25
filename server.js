@@ -1,5 +1,7 @@
 const express = require("express");
-const path = require("path");
+//const path = require("path");
+const routes = require("./routes");
+const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -14,7 +16,7 @@ app.use(routes);
 
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost:27017/googlebooks",{useNewUrlParser: true}
-)
+ )
 
 app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
