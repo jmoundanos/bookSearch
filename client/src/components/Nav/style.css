@@ -1,0 +1,13 @@
+nav {
+    background-color: #ff8f6f;
+}
+
+a {
+    text-decoration: none;
+    color: white
+}
+ a:hover {
+    text-decoration: underline;
+    color: white
+}
+

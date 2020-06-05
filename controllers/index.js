@@ -1,4 +1,4 @@
-const Items = require("bookController.js");
+const Items = require("booksController.js");
 
 module.exports = {
     Book

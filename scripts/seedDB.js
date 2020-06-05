@@ -20,9 +20,9 @@ const bookSeed =
 
 db.Book
     .remove({})
-    .then(() => db.Book.collection.insertMany(bookSeed))
+    .then(() => db.Book.create(bookSeed))
     .then(data => {
-        console.log(data.result.n + " records inserted!");
+        console.log(data.result + " records inserted!");
        
     })
     .catch(err => {

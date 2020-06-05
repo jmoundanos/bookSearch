@@ -1,0 +1,13 @@
+.searchBtn{
+    color: white;
+    background-color:  #ff8f6f;
+    margin: 10px;
+    border: 1px solid #ff8f6f;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+}
+
+h2{
+    color: #3f3a31;
+    font-size: 20px;
+}
