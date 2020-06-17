@@ -1,7 +1,16 @@
-nav {
+nav{
     background-color: #ff8f6f;
 }
-
+.navbar-brand{
+   
+    font-family: 'Satisfy', cursive;
+}
+.nav-item{
+    font-family: 'Cinzel', serif;
+}
+.navbar-brand{
+    font-size: 50px;;
+}
 a {
     text-decoration: none;
     color: white

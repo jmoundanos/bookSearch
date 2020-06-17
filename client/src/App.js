@@ -18,12 +18,14 @@ class App extends Component {
         <div>
           <Nav />
           <Header />
+          <Wrapper>
           <Switch>
             <Route exact path="/" component={Search} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/saved" component={Saved} />
             <Route exact path="/noMatch" component={NoMatch} />
           </Switch>
+          </Wrapper>
         </div>
       </Router>
     )

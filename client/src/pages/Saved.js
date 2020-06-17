@@ -22,7 +22,6 @@ class Saved extends Component {
     render() {
         return (
             <div className="container">
-                <h2>Saved books</h2>
                 <SavedBookResults savedBooks={this.state.savedBooks} handleDeleteButton={this.handleDeleteButton} />
             </div>
         )

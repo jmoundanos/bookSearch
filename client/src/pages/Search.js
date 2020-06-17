@@ -4,7 +4,7 @@ import Form from "../components/Form";
 import SearchResults from "../components/SearchResults"
 
 
-class SearchBooks extends Component {
+class Search extends Component {
     //create state
     state = {
         search: "",
@@ -13,38 +13,36 @@ class SearchBooks extends Component {
         message: ""
     };
 
-    //function to take value of what enter in the search bar
+    //function to get value entered in the search form
     handleChange = event => {
         this.setState({ search: event.target.value })
     }
 
-    //function to control the submit button of the search form 
+    //function for submit button
     handleFormSubmit = event => {
         event.preventDefault();
-        // once it clicks it connects to the google book api with the search value
+        //connect to google api
         API.googleBook(this.state.search)
             .then(res => {
                 if (res.data.items === "error") {
                     throw new Error(res.data.items);
                 }
                 else {
-                    // store response in a array
-                    let results = res.data.items
-                    //map through the array 
+                    let results = res.data.items 
                     results = results.map(result => {
-                        //store each book information in a new object 
+                        //store the new book information as an object
                         result = {
-                            key: result.id,
+                            // key: result.id,
                             id: result.id,
                             title: result.volumeInfo.title,
-                            author: result.volumeInfo.authors,
+                            authors: result.volumeInfo.authors,
                             description: result.volumeInfo.description,
                             image: result.volumeInfo.imageLinks.thumbnail,
                             link: result.volumeInfo.infoLink
                         }
                         return result;
                     })
-                    // reset the sate of the empty books array to the new arrays of objects with properties geting back from the response
+                    //set the state of the books array to the results from google api
                     this.setState({ books: results, error: "" })
                 }
             })
@@ -54,12 +52,10 @@ class SearchBooks extends Component {
     handleSavedButton = event => {
         // console.log(event)
         event.preventDefault();
-        console.log(this.state.books)
         let savedBooks = this.state.books.filter(book => book.id === event.target.id)
-        console.log(savedBooks);
-        //savedBooks = savedBooks[0];
+        savedBooks = savedBooks[0];
         API.saveBook(savedBooks)
-            .then(this.setState({ message: alert("Your book is saved") }))
+            .then(console.log("book saved"))
             .catch(err => console.log(err))
     }
     render() {
@@ -83,65 +79,5 @@ class SearchBooks extends Component {
 
 }
 
-export default SearchBooks
+export default Search;
 
-// class Search extends React.Component {
-//     state = {
-//         value: "",
-//         books: []
-//     };
-
-//     componentDidMount() {
-//         this.searchBook();
-//     }
-
-//     makeBook = bookData => {
-//         return {
-//             _id: bookData.id,
-//             title: bookData.volumeInfo.title,
-//             authors: bookData.volumeInfo.authors,
-//             description: bookData.volumeInfo.description,
-//             image: bookData.volumeInfo.imageLinks.thumbnail,
-//             link: bookData.volumeInfo.previewLink
-//         }
-//         console.log(bookData);
-//     }
-
-
-//     searchBook = query => {
-//         API.getBook(query)
-//             .then(res => this.setState({ books: res.data.items.map(bookData => this.makeBook(bookData)) }))
-//             .catch(err => console.error(err));
-//     };
-
-//     handleInputChange = event => {
-//         const name = event.target.name;
-//         const value = event.target.value;
-//         this.setState({
-//             [name]: value
-//         });
-//     };
-
-//     handleFormSubmit = event => {
-//         event.preventDefault();
-//         this.searchBook(this.state.search);
-//     };
-
-//     render() {
-//         return (
-//             <div>
-//                 <Form
-//                     search={this.state.search}
-//                     handleInputChange={this.handleInputChange}
-//                     handleFormSubmit={this.handleFormSubmit}
-//                 />
-//                 <div className="container">
-//                     <h2></h2>
-//                     {/* <Results books={this.state.books} /> */}
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-
-// export default Search;
