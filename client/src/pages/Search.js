@@ -32,7 +32,7 @@ class Search extends Component {
                     results = results.map(result => {
                         //store the new book information as an object
                         result = {
-                            // key: result.id,
+                            key: result.id,
                             id: result.id,
                             title: result.volumeInfo.title,
                             authors: result.volumeInfo.authors,
@@ -48,9 +48,8 @@ class Search extends Component {
             })
             .catch(err => this.setState({ error: err.items }));
     }
-
+    //function for save book button
     handleSavedButton = event => {
-        // console.log(event)
         event.preventDefault();
         let savedBooks = this.state.books.filter(book => book.id === event.target.id)
         savedBooks = savedBooks[0];
@@ -60,23 +59,18 @@ class Search extends Component {
     }
     render() {
         return (
-           
-                <div>
-                 <Form
-                    // search={this.state.search}
+            <div>
+                <Form
                     handleChange={this.handleChange}
                     handleFormSubmit={this.handleFormSubmit}
-                 />
+                />
                 <div className="container">
-                    
                     <SearchResults books={this.state.books} handleSavedButton={this.handleSavedButton} />
                 </div>
              </div>
            
         )
     }
-
-
 }
 
 export default Search;
