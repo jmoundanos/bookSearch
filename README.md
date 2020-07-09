@@ -13,11 +13,7 @@ A MongoDB database will also be necessary. Using Robo3T, or another NoSql DB GUI
 
 ## To Use This App
 ### Home/Search Page
-<<<<<<< HEAD
 ![Screenshot of My Bookshelf Home Page](client/public/searchPage.png)
-=======
-[Screenshot of My Bookshelf Home Page](client/public/Screenshot(21).png)
->>>>>>> 7726b4bec67dc56ca99be3c927b4428fb9513d6c
 
 ### Saved Books Page
 ![Screenshot of My Bookshelf Saved BooksPage](client/public/savedPage.png)
