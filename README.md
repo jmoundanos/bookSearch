@@ -13,7 +13,7 @@ A MongoDB database will also be necessary. Using Robo3T, or another NoSql DB GUI
 
 ## To Use This App
 ### Home/Search Page
-![Screenshot of bamzonCustomer.js](assets/customerView.png)
+![Screenshot of bookSearch](client/build/static/media/Screenshot(21).png)
 
 ## Built With
 * React
