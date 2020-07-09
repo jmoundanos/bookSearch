@@ -9,7 +9,7 @@ Npm packages will be necessary to run My Bookshelf. Open your terminal and insta
 * React-Router-Dom
 * Concurrently
 
-A Mysql database will also be necessary. Using Mysql Workbench, create a database called 'bamazon'. Use the schema.sql file to create the table needed for this app and the seed.sql file to populate a few rows. Add additional data to the table if needed. 
+A MongoDB database will also be necessary. Using Robo3T, or another NoSql DB GUI, create a database called 'books'. Use the seedDB.js file to add a book seed. 
 
 ## To Use This App
 
