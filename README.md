@@ -13,9 +13,10 @@ A MongoDB database will also be necessary. Using Robo3T, or another NoSql DB GUI
 
 ## To Use This App
 ### Home/Search Page
-[Screenshot of My Bookshelf Home Page](client/build/static/media/Screenshot(21).png)
+![Screenshot of My Bookshelf Home Page](client/public/searchPage.png)
 
-### Saved Book Page
+### Saved Books Page
+![Screenshot of My Bookshelf Saved BooksPage](client/public/savedPage.png)
 
 ## Deploy
 Deploy to Heroku. Provision database before deploying.
