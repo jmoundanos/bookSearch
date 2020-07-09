@@ -12,7 +12,7 @@ Npm packages will be necessary to run My Bookshelf. Open your terminal and insta
 A MongoDB database will also be necessary. Using Robo3T, or another NoSql DB GUI, create a database called 'books'. Use the seedDB.js file to add a book seed. 
 
 ## To Use This App
-
+### Home/Search Page
 ![Screenshot of bamzonCustomer.js](assets/customerView.png)
 
 ## Built With
