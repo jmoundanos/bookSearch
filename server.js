@@ -14,20 +14,11 @@ if (process.env.NODE_ENV === "production") {
 }
 app.use(routes);
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://User:daphnemax12@cluster0.ke4lc.mongodb.net/BookSearch?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
-// mongoose.connect(
-//     process.env.MONGODB_URI || "mongodb://localhost/googlebooks",{useNewUrlParser: true}
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/googlebooks",{useNewUrlParser: true}
     
-//  )
-//  console.log("DB connected");
+ )
+ console.log("DB connected");
 
 app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
