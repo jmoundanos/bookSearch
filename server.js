@@ -13,12 +13,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 app.use(routes);
-// try {
-//   mongoose.connect( uri, {useNewUrlParser: true, useUnifiedTopology: true}, () =>
-//   console.log("connected"));    
-//   }catch (error) { 
-//   console.log("could not connect");    
-//   }
+
 
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true, useUnifiedTopology: true},

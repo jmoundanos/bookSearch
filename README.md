@@ -19,7 +19,7 @@ A MongoDB database will also be necessary. Using Robo3T, or another NoSql DB GUI
 ![Screenshot of My Bookshelf Saved BooksPage](client/public/savedPage.png)
 
 ## Deploy
-Deploy to Heroku. Provision database before deploying. https://jennifer-book-search.herokuapp.com/search
+Deploy to Heroku. Provision database before deploying. https://jennifer-book-search.herokuapp.com/
 
 ## Built With
 * React
